@@ -1,0 +1,37 @@
+def choose_operation():
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    operation = int(input("Choose an operation: "))
+    return operation
+
+def enter_operand(operand_number):
+    operand = int(input("Input the "+operand_number+" operand: "))
+    print(operand)
+    return operand
+
+
+def perform_operation(operation, operand1, operand2):
+    result = 0
+    if operation == 1:
+        result = operand1 + operand2
+    elif operation == 2:
+        result = operand1 - operand2
+    elif operation == 3:
+        result = operand1 * operand2
+    elif operation == 4:
+        result = operand1 / operand2
+    else:
+        print("Error, choose a possible operation")
+    return result
+
+def main():
+    operation = choose_operation()
+    operand1 = enter_operand("first")
+    operand2 = enter_operand("second")
+    print("Operand 1:", operand1)
+    print("Operand 2:", operand2)
+    result = perform_operation(operation, operand1, operand2)
+    print("Result:", result)
+main()
